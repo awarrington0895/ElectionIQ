@@ -1,0 +1,25 @@
+body
+{
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-image: url(../res/background.png);
+}
+
+#buffer
+{
+    margin: 12em;
+}
+
+#logo
+{
+    padding-top: 2em;
+    width: 20em;
+    
+}
+
+.container-fluid 
+{
+	
+}
+
