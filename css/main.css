@@ -13,13 +13,25 @@ body
 
 #logo
 {
-    padding-top: 2em;
+    padding-top: 3em;
     width: 20em;
     
 }
 
-.container-fluid 
+#left-logo 
 {
-	
+	border-right: 1px solid rgba(255,255,255,0.2);
+
 }
 
+p
+{
+    color: grey;
+}
+
+.btn
+{
+    background-color: #68AA48;
+    color: white;
+    border-radius: 0.75em;
+}
