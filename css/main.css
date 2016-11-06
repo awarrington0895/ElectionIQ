@@ -35,8 +35,7 @@ body
     font-weight:bold;
     align-self: center;
     color: white;
-        font-family: "Avenir";
-
+    font-family: "Arial";
     font-size: 1.5em;
     width: 49.5%;
     float: left;
@@ -68,7 +67,7 @@ body
 
 .btn
 {
-    font-family: "Avenir";
+    font-family: "Arial";
     font-size: 1.5em;
     letter-spacing:2px;
     text-transform: full-width;
