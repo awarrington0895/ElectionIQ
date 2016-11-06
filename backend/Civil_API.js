@@ -1,5 +1,5 @@
-function VoterData(address, key) {
-    this.address = address;
+function VoterData(address, key) { //voter data class
+    this.address = address.replace(" ", "+");
     this.key = key;
     this.xmlData = new XMLHttpRequest();
 }
@@ -13,6 +13,10 @@ VoterData.prototype.print = function() {
     console.log(this.xmlData.responseText);
 };
 
-var dat = new VoterData("6807+E+82nd+St+Tulsa+OK", "AIzaSyAHNL-KlQfG8iva2YZITyxCQT4oEQbGr4Q");//replace spaces with '+' for address
+VoterData.prototype.getXmlDoc = function() {
+    return this.xmlData;
+};
+
+var dat = new VoterData("6807 E 82nd St Tulsa OK", "AIzaSyAHNL-KlQfG8iva2YZITyxCQT4oEQbGr4Q");//replace spaces with '+' for address
 dat.getData();
 dat.print();
