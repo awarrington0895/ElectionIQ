@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+
+    <!--  Normalize.css  -->
+    <link rel="stylesheet" href="css/Normalize.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+    <!-- main.css -->
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <script>
+        var url = "http://ip-api.com/json";
+
+        function httpGet(url) {
+            if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            } else { // code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange = function() {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    return xmlhttp.responseText;
+                }
+            }
+            xmlhttp.open("GET", theUrl, false);
+            xmlhttp.send();
+        }
+
+        alert(httpGet("http://ip-api.com/json"));
+
+    </script>
+    <div id="indexContainer">
+        <div class="inner">
+            <div>
+                <img src="res/LogoDraft.png" alt="ElectionIQ logo" id="logoSidePage" class="img-responsive"></br>
+                <div class="text">
+                    ElectionIQ is your one-stop solution to gather all of your election day information. ElectionIQ takes into account your address, and presents up-to-date and location-specific Election information.
+                </div>
+            </div>
+
+        </div>
+
+        <div id="sep"></div>
+
+        <div class="inner right">
+            <p>
+                WHERE IS MY POLLING PLACE?
+            </p>
+            <br/>
+
+            <div class="map-container">
+                <div id="address-line">
+                    <form class="form-inline">
+                        <div class="form-group" id="street-address-container">
+                            
+                            <input type="text" class="form-control" id="street-address" placeholder="Street Address">
+                        </div>
+
+                        <button type="submit" class="btn btn-default" id="find">FIND</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script>
+            //document vertical resizing to content
+            var w = window.innerWidth;
+            var h = window.innerHeight;
+            document.getElementById("indexContainer").style.height = h * .6 + 'px';
+
+        </script>
+    </div>
+
+</body>
+
+</html>
