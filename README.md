@@ -6,3 +6,4 @@
 
   What we are trying to do with ElectionIQ is encourage American citizens to vote by giving them the information they need to make responsible decisions for the country and their futures. We anticipate that this website will increase the number of registered voters, as well as increase the amount of people voting on election day. With ElectionIQ, American voters can confidently cast their ballots with the knowledge that they are making the best choices for their future.
   
+(Census: http://www.census.gov/data/tables/time-series/demo/voting-and-registration/p20-577.html)
