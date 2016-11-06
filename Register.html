@@ -19,29 +19,23 @@
     <body>
 
         <script>
-            var url = "http://ip-api.com/json";
-            function httpGet(url)
-            {
-                if (window.XMLHttpRequest)
-                {// code for IE7+, Firefox, Chrome, Opera, Safari
-                    xmlhttp = new XMLHttpRequest();
-                } else
-                {// code for IE6, IE5
-                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-                }
-                xmlhttp.onreadystatechange = function ()
-                {
-                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
-                    {
-                        return xmlhttp.responseText;
+            function RegOnline(){
+                $.ajax({
+                    url: 'http://ip-api.com/json',
+                    dataType: 'json',
+                    success: function (data) {
+                        $("#results").append('all good');
+                        window.location.href = "https://vote.gov/register/" + JSON.stringify(data.region).replace(/\"/g, "").toLowerCase() + "/";
+                    },
+                    error: function () {
+                        $("#results").append("error");
+                        alert('error');
                     }
-                }
-                xmlhttp.open("GET", theUrl, false);
-                xmlhttp.send();
+                });
             }
-            
-            alert(httpGet("http://ip-api.com/json"));
-        </script>
+                
+            </script>
+        
         <div id="indexContainer">
             <div class="inner">
                 <div>
@@ -59,7 +53,7 @@
                 <p>
                     Registering to vote is simple! For your convenience, there are two options through which you can register to vote
                 </p><br/>
-                <div class="btn btn-default" onClick="alert(items)">REGISTER ONLINE</div>
+                <div class="btn btn-default" onClick="RegOnline()">REGISTER ONLINE</div>
                 <div class="btn btn-default">REGISTER IN PERSON</div>
 
             </div>
