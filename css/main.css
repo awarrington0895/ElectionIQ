@@ -85,3 +85,14 @@ body
     padding: 0.3em;
 }
 
+#street-address-container
+{
+    width: 90%;
+
+}
+
+#street-address
+{
+    border-radius: 1em;
+}
+
