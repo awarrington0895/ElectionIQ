@@ -4,34 +4,65 @@ body
     background-attachment: fixed;
     background-position: center;
     background-image: url(../res/background.png);
+    width: 80%;
 }
 
-#buffer
-{
-    margin: 12em;
+#indexContainer{
+    position:absolute; /*it can be fixed too*/
+    left:0; right:0;
+    top:0; bottom:0;
+    margin:auto;
+    width: 85%;
+    display: flex;
+    justify-content: center;
+
+
 }
 
-#logo
+#logoSidePage
 {
-    padding-top: 3em;
+    display: block;
     width: 20em;
-    
+    height: 7em;
+    margin: 0 auto;
 }
 
-#left-logo 
+.inner
 {
-	border-right: 1px solid rgba(255,255,255,0.2);
+
+    align-self: center;
+    color: white;
+    font-size: 1.3em;
+    width: 49.5%;
+    float: left;
+    padding:0 4em;
+    vertical-align: middle;
 
 }
 
-p
-{
-    color: grey;
+.right{
+    text-align: center;
 }
+
+.right> p{
+    font-size: 2em;
+}
+
+#sep{
+    border-right: 1px solid rgba(255,255,255,0.2);
+
+}
+
+
 
 .btn
 {
+    font-size: 1.4em;
+    display: block;
     background-color: #68AA48;
     color: white;
     border-radius: 0.75em;
+    width: 80%;
+    margin: 0.5em auto;
+    padding: 0.3em;
 }

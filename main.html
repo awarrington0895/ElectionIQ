@@ -1,60 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
+    <head>
+        <meta charset="UTF-8">
+        <title>Home</title>
 
-    <!--  Normalize.css  -->
-    <link rel="stylesheet" href="css/Normalize.css">
+        <!--  Normalize.css  -->
+        <link rel="stylesheet" href="css/Normalize.css">
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 
-    <!-- main.css -->
-    <link rel="stylesheet" href="css/main.css">
-</head>
+        <!-- main.css -->
+        <link rel="stylesheet" href="css/main.css">
+    </head>
 
-<body>
+    <body>
 
 
 
-    
-    <div id="canvas">
-        <div id="buffer">
 
-        </div>
-        <div class="container-fluid">
-            <div class="col-md-6" id="left-logo">
-                <div class="col-md-4"></div>
-                <div class="col-md-4"><img src="res/LogoDraft.png" alt="ElectionIQ logo" id="logo" class="img-responsive"></div>
-                <div class="col-md-4"></div>
-                <div class="col-md-12">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla amet sint sunt quidem veniam quis quas voluptatibus numquam ratione rem, nesciunt accusamus, nisi aut assumenda molestiae pariatur quae tempore quos!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero ad nemo porro accusantium veniam maxime iusto rerum eaque incidunt facere doloribus, sed minus exercitationem eligendi quae aliquam laudantium, beatae? Non!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi quidem, sit atque, obcaecati natus quam nemo odit optio delectus assumenda corrupti similique beatae deleniti repudiandae aliquid. Soluta cumque praesentium accusantium.
+        <div id="indexContainer">
+            <div class="inner">
+                <div>
+                    <img src="res/LogoDraft.png" alt="ElectionIQ logo" id="logoSidePage" class="img-responsive"></br>
+                    <div class="text">
+                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspLorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla amet sint sunt quidem veniam quis quas voluptatibus numquam ratione rem, nesciunt accusamus, nisi aut assumenda molestiae pariatur quae tempore quos!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero ad nemo porro accusantium veniam maxime iusto rerum eaque incidunt facere doloribus, sed minus exercitationem eligendi quae aliquam laudantium, beatae? Non!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi quidem, sit atque, obcaecati natus quam nemo odit optio delectus assumenda corrupti similique beatae deleniti repudiandae aliquid. Soluta cumque praesentium accusantium.
+                    </div>
                 </div>
 
             </div>
             
-            <div class="col-md-6">
+            <div id="sep"></div>
+
+            <div class="inner right">
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi modi cupiditate id esse cumque ut repellat dignissimos rem, animi fuga iure officia dolorem rerum quos a aut necessitatibus nisi sit!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi modi cupiditate id esse cumque ut repellat dignissimos rem, animi fuga iure officia dolorem rerum quos a aut necessitatibus nisi sit!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi modi cupiditate id esse cumque ut repellat dignissimos rem, animi fuga iure officia dolorem rerum quos a aut necessitatibus n
-                </p>
-                <div class="col-md-12">
-                    <a href="#" class="btn btn-default">REGISTER ONLINE</a><br><br>
-                    <a href="#" class="btn btn-default">REGISTER IN PERSON</a>
-                </div>
+                        Registering to vote is simple! For your convenience, there are two options through which you can register to vote
+                </p><br/>
+                <a href="#" class="btn btn-default">REGISTER ONLINE</a>
+                <a href="#" class="btn btn-default">REGISTER IN PERSON</a>
             </div>
         </div>
-    </div>
 
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-
-
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Bootstrap javascript plugins -->
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-</body>
+        <script>
+            //document vertical resizing to content
+            var w = window.innerWidth;
+            var h = window.innerHeight;
+            document.getElementById("indexContainer").style.height = h * .6 + 'px';
+        </script>
+    </body>
 
 </html>
