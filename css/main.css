@@ -24,6 +24,17 @@ body
 
 }
 
+#register-desc
+{
+    margin-bottom: 3em;
+}
+
+#canvas 
+{
+	padding-right: 2em;
+    padding-left:  2em;
+}
+
 p
 {
     color: grey;
@@ -34,4 +45,6 @@ p
     background-color: #68AA48;
     color: white;
     border-radius: 0.75em;
+    width: 20em;
+    padding: 0.75em;
 }
