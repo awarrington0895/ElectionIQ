@@ -38,9 +38,12 @@ body
     font-family: "Arial";
     font-size: 1.5em;
     width: 49.5%;
+    height: 100%;
     float: left;
     padding:0 4em;
     vertical-align: middle;
+    overflow: scroll;
+    overflow: auto;
 }
 
 .right{
@@ -48,7 +51,7 @@ body
 }
 #register-desc
 {
-    margin-bottom: 3em;
+    margin-bottom: 3vw;
 }
 
 #canvas 
@@ -58,7 +61,7 @@ body
 }
 
 .right> p{
-    font-size: 1.75em;
+    font-size: 1.75vw;
 }
 
 #sep{
@@ -68,7 +71,7 @@ body
 .btn
 {
     font-family: "Arial";
-    font-size: 1.5em;
+    font-size: 1.5vw;
     letter-spacing:2px;
     text-transform: full-width;
     font-weight:400;
