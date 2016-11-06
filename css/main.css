@@ -1,9 +1,14 @@
+@font-face {
+    font-family: 'Avenir'; /*a name to be used later*/
+    src: url('../fonts/Avenir.ttc'); /*URL to font*/
+}
+
 body
 {
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    background-image: url(../res/background.png);
+    background-image: url(../res/background.jpg);
     width: 80%;
 }
 
@@ -15,28 +20,28 @@ body
     width: 85%;
     display: flex;
     justify-content: center;
-
 }
 
 #logoSidePage
 {
     display: block;
-    width: 20em;
+    width: 18em;
     height: 7em;
     margin: 0 auto;
 }
 
 .inner
 {
-
+    font-weight:bold;
     align-self: center;
     color: white;
-    font-size: 1.3em;
+        font-family: "Avenir";
+
+    font-size: 1.5em;
     width: 49.5%;
     float: left;
     padding:0 4em;
     vertical-align: middle;
-
 }
 
 .right{
@@ -49,23 +54,25 @@ body
 
 #canvas 
 {
-	padding-right: 2em;
+    padding-right: 2em;
     padding-left:  2em;
 }
 
 .right> p{
-    font-size: 2em;
+    font-size: 1.75em;
 }
 
 #sep{
     border-right: 1px solid rgba(255,255,255,0.2);
-
 }
-
 
 .btn
 {
-    font-size: 1.4em;
+    font-family: "Avenir";
+    font-size: 1.5em;
+    letter-spacing:2px;
+    text-transform: full-width;
+    font-weight:400;
     display: block;
     background-color: #68AA48;
     color: white;
@@ -73,6 +80,4 @@ body
     width: 80%;
     margin: 0.5em auto;
     padding: 0.3em;
-    width: 20em;
-    padding: 0.75em;
 }
