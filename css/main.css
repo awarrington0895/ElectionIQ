@@ -53,11 +53,6 @@ body
     padding-left:  2em;
 }
 
-p
-{
-    color: grey;
-}
-
 .right> p{
     font-size: 2em;
 }
