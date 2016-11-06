@@ -13,40 +13,67 @@
 
         <!-- main.css -->
         <link rel="stylesheet" href="css/main.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     </head>
 
     <body>
+
+        <script>
+            var url = "http://ip-api.com/json";
+            function httpGet(url)
+            {
+                if (window.XMLHttpRequest)
+                {// code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp = new XMLHttpRequest();
+                } else
+                {// code for IE6, IE5
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange = function ()
+                {
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                    {
+                        return xmlhttp.responseText;
+                    }
+                }
+                xmlhttp.open("GET", theUrl, false);
+                xmlhttp.send();
+            }
+            
+            alert(httpGet("http://ip-api.com/json"));
+        </script>
         <div id="indexContainer">
             <div class="inner">
                 <div>
                     <img src="res/LogoDraft.png" alt="ElectionIQ logo" id="logoSidePage" class="img-responsive"></br>
                     <div class="text">
-                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspLorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla amet sint sunt quidem veniam quis quas voluptatibus numquam ratione rem, nesciunt accusamus, nisi aut assumenda molestiae pariatur quae tempore quos!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero ad nemo porro accusantium veniam maxime iusto rerum eaque incidunt facere doloribus, sed minus exercitationem eligendi quae aliquam laudantium, beatae? Non!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi quidem, sit atque, obcaecati natus quam nemo odit optio delectus assumenda corrupti similique beatae deleniti repudiandae aliquid. Soluta cumque praesentium accusantium.
+                        ElectionIQ is your one-stop solution to gather all of your election day information. ElectionIQ takes into account your address, and presents up-to-date and location-specific Election information.
                     </div>
                 </div>
 
             </div>
-            
+
             <div id="sep"></div>
 
             <div class="inner right">
                 <p>
-                        Registering to vote is simple! For your convenience, there are two options through which you can register to vote
+                    Registering to vote is simple! For your convenience, there are two options through which you can register to vote
                 </p><br/>
-                <a href="#" class="btn btn-default">REGISTER ONLINE</a>
-                <a href="#" class="btn btn-default">REGISTER IN PERSON</a>
-           
+                <div class="btn btn-default" onClick="alert(items)">REGISTER ONLINE</div>
+                <div class="btn btn-default">REGISTER IN PERSON</div>
+
+            </div>
+
+
+            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+            <script>
+                //document vertical resizing to content
+                var w = window.innerWidth;
+                var h = window.innerHeight;
+                document.getElementById("indexContainer").style.height = h * .6 + 'px';
+            </script>
         </div>
 
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-        <script>
-            //document vertical resizing to content
-            var w = window.innerWidth;
-            var h = window.innerHeight;
-            document.getElementById("indexContainer").style.height = h * .6 + 'px';
-        </script>
     </body>
 
 </html>
