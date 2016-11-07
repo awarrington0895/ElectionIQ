@@ -4,12 +4,13 @@
    <head>
        <meta charset="utf-8"/>
        <title>Maps</title>
+       <!--<script type="text/javascript" src="mapUpdate.js"/>-->
        <script>
-            var root = 'https://www.google.com/maps/embed/v1/search?key=AIzaSyDko3US7QPjYurzRs1V7rtB344Fc9G25Ck&q=';
-            function mapPrep(location, id, query)
-            {
+           function mapPrep(location, id, query)
+           {
+               var root = 'https://www.google.com/maps/embed/v1/search?key=AIzaSyDko3US7QPjYurzRs1V7rtB344Fc9G25Ck&q=';
                document.getElementById(id).src = root.concat(query, "+near+", location);
-            }
+           }
        </script>
    </head>
    <body>
@@ -21,8 +22,6 @@
             src="https://www.google.com/maps/embed/v1/search?key=AIzaSyDko3US7QPjYurzRs1V7rtB344Fc9G25Ck&q=0.0,0.0"
             allowfullscreen>
         </iframe>
-        <script>
-             mapPrep('66045', 'testMap', 'Taco+Bell');
-        </script>
+        <script>mapPrep('66045', 'testMap', 'Taco+Johns')</script>
    </body>
 </html>
