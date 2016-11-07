@@ -62,7 +62,7 @@
             <div class="map-container">
                 <div id="address-line">
                     <div class="row" id=address-row>
-                        <form class="form-inline">
+                        <form class="form-inline" id="address-form">
                             <div class="col-md-8">
                                 <div class="form-group" id="street-address-container">
 
@@ -93,6 +93,31 @@
             var h = window.innerHeight;
             document.getElementById("indexContainer").style.height = h * .6 + 'px';
 
+        </script>
+        
+        <script>
+            // 
+            function processForm(e)
+            {
+                //Prevents submit button from refreshing page
+                if (e.preventDefault) e.preventDefault();
+                
+                
+                
+                return false;
+            }
+            
+            var form = document.getElementById('address-form');
+            
+            // Adds event listener to the submit button
+            if (form.attachEvent)
+                {
+                    form.attachEvent("submit", processForm);
+                }
+            else
+                {
+                    form.addEventListener("submit", processForm);
+                }
         </script>
     </div>
 
