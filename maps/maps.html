@@ -8,6 +8,7 @@
        <script>
            function mapPrep(location, id, query)
            {
+               location = location.replace(" ","+")
                var root = 'https://www.google.com/maps/embed/v1/search?key=AIzaSyDko3US7QPjYurzRs1V7rtB344Fc9G25Ck&q=';
                document.getElementById(id).src = root.concat(query, "+near+", location);
            }
@@ -19,9 +20,8 @@
             width="600"
             height="480"
             style="border:0"
-            src="https://www.google.com/maps/embed/v1/search?key=AIzaSyDko3US7QPjYurzRs1V7rtB344Fc9G25Ck&q=0.0,0.0"
             allowfullscreen>
         </iframe>
-        <script>mapPrep('66045', 'testMap', 'Taco+Johns')</script>
+        <script>mapPrep('new york, NY', 'testMap', 'DMV county clerk')</script>
    </body>
 </html>
