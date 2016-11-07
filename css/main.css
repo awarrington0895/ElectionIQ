@@ -25,8 +25,7 @@ body
 #logoSidePage
 {
     display: block;
-    width: 18em;
-    height: 7em;
+    width: 80%;
     margin: 0 auto;
 }
 
@@ -83,4 +82,13 @@ body
     width: 80%;
     margin: 0.5em auto;
     padding: 0.3em;
+}
+#right{
+    text-align: left;
+}
+
+h3{
+    color: rgb(100,216,120);
+    text-decoration: underline;
+    text-align: left;
 }

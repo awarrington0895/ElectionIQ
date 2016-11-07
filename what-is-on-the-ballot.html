@@ -14,7 +14,7 @@
         <!-- main.css -->
         <link rel="stylesheet" href="css/main.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="js/Civil_API.js" type="text/javascript"></script>
+        <!--<script src="js/Civil_API.js" type="text/javascript"></script>-->
     </head>
 
     <body>
@@ -31,10 +31,8 @@
 
             <div id="sep"></div>
 
-            <div class="inner right">
-                <script>
-                    
-                </script>
+            <div id="right" class="inner right">
+
             </div>
 
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -45,6 +43,34 @@
                 document.getElementById("indexContainer").style.height = h * .6 + 'px';
             </script>
         </div>
+
+        <script>
+            function VoterData(address, key) { //voter data class
+                $.ajax({
+                    url: 'https://www.googleapis.com/civicinfo/v2/voterinfo?address=' + address + '&key=' + key,
+                    dataType: 'json',
+                    success: function (data) {
+                        $("#results").append('all good');
+                        data.contests.forEach(function (entry) {
+                            if(JSON.stringify(data.type) !='\"Referendum\"'){
+                            document.getElementById("right").innerHTML += "<h3>" + JSON.stringify(entry.office).replace(/\"/g, "") + "<h3>";
+                            entry.candidates.forEach(function (entry2) {
+                                document.getElementById("right").innerHTML += "<h4> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" + JSON.stringify(entry2.name).replace(/\"/g, "") + "<h4>";
+                            })
+                            }
+                            else{
+                                document.getElementById("right").innerHTML += "oops";
+                            }
+                        })
+                    },
+                    error: function () {
+                        $("#results").append("error");
+                        alert('error');
+                    }
+                });
+            }
+            VoterData("1734 Engel Rd Lawrence KS", "AIzaSyAHNL-KlQfG8iva2YZITyxCQT4oEQbGr4Q")//replace spaces with '+' for address
+        </script>
 
     </body>
 
