@@ -87,12 +87,27 @@ body
 
 #street-address-container
 {
-    width: 90%;
+    width: 100%;
+
 
 }
 
 #street-address
 {
     border-radius: 1em;
+    width: 100%;
+}
+
+#find 
+{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+}
+
+#address-row
+{
+    margin-bottom: 1em;
 }
 
