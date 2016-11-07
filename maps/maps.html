@@ -4,18 +4,10 @@
    <head>
        <meta charset="utf-8"/>
        <title>Maps</title>
-       <!--<script type="text/javascript" src="mapUpdate.js"/>-->
-       <script>
-           function mapPrep(location, id, query)
-           {
-               location = location.replace(" ","+")
-               var root = 'https://www.google.com/maps/embed/v1/search?key=AIzaSyDko3US7QPjYurzRs1V7rtB344Fc9G25Ck&q=';
-               document.getElementById(id).src = root.concat(query, "+near+", location);
-           }
-       </script>
+       <script src="mapUpdate.js"></script>
    </head>
    <body>
-       <h1 id="test">Hello World</h1>
+       <h1 id="test">Registration Locations</h1>
        <iframe id="testMap"
             width="600"
             height="480"
