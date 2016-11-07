@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+
+<html>
+   <head>
+       <meta charset="utf-8"/>
+       <title>Maps</title>
+       <script>
+            document.getElementById("test").innerHTML = '66045';
+            var root = 'https://www.google.com/maps/embed/v1/search?key=AIzaSyDko3US7QPjYurzRs1V7rtB344Fc9G25Ck&q=';
+            function mapPrep(location, id, query)
+            {
+               document.getElementById(id).src = root.concat(query,'near', location);
+            }
+            mapPrep('66045', 'testMap', 'Taco Bell');
+       </script>
+   </head>
+   <body>
+       <h1 id="test">Hello World</h1>
+       <iframe id="testMap"
+            width="600"
+            height="480"
+            style="border:0">
+        </iframe>
+   </body>
+</html>
