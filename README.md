@@ -5,5 +5,7 @@
   ElectionIQ solves this problem by providing the user with custom-tailored information specific to their location. Through a streamlined interface, users simply input their address, and our program delivers a wealth of information, including nearby polling locations, registration sites, local and national candidates (along with their websites and social media accounts), and ballot initiatives. Our website also offers information in regards to becoming a registered voter, as well as dates for various upcoming events pertaining to the election.
 
   What we are trying to do with ElectionIQ is encourage American citizens to vote by giving them the information they need to make responsible decisions for the country and their futures. We anticipate that this website will increase the number of registered voters, as well as increase the amount of people voting on election day. With ElectionIQ, American voters can confidently cast their ballots with the knowledge that they are making the best choices for their future.
-  
+
 (Census: http://www.census.gov/data/tables/time-series/demo/voting-and-registration/p20-577.html)
+
+Youtube Link:  https://youtu.be/ib4b6R5b0oQ
