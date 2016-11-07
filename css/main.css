@@ -61,7 +61,7 @@ body
 }
 
 .right> p{
-    font-size: 1.75vw;
+    font-size: 1.35vw;
 }
 
 #sep{
@@ -71,7 +71,7 @@ body
 .btn
 {
     font-family: "Arial";
-    font-size: 1.5vw;
+    font-size: 1.2vw;
     letter-spacing:2px;
     text-transform: full-width;
     font-weight:400;
@@ -119,6 +119,11 @@ h3{
     margin-bottom: 1em;
 }
 
+#social_media>img{
+    width: 2.5em;
+    height: 2.4em;
+}
+
 #map 
 {
     width: 100%;
@@ -129,9 +134,7 @@ h3{
     width: 2.5em;
 }
 #testMap
-{
-
-    
+{ 
     width: 100%;
     height: 100%;
 }
