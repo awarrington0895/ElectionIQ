@@ -75,7 +75,7 @@
                         </form>
                     </div>
                 </div>
-                
+
                 <div class="row">
                     <div class="col-md-12" id="map">
                         <p>Embedded map goes here!</p>
@@ -94,30 +94,34 @@
             document.getElementById("indexContainer").style.height = h * .6 + 'px';
 
         </script>
-        
+
         <script>
             // 
-            function processForm(e)
-            {
+            function processForm(e) {
                 //Prevents submit button from refreshing page
                 if (e.preventDefault) e.preventDefault();
-                
-                document.getElementById('map').innerHTML = "<img src='res/map.png' id='map-pic'>";
-                
+
+                //                document.getElementById('map').innerHTML = "<img src='res/map.png' id='map-pic'>";
+
+                document.getElementById('map').innerHTML = 
+        `
+          <iframe id="testMap"
+           style="border:0"
+           src="https://www.google.com/maps/embed/v1/search?key=AIzaSyDko3US7QPjYurzRs1V7rtB344Fc9G25Ck&q=2104+W+15th+St" allowfullscreen>
+       </iframe>`
+
                 return false;
             }
-            
+
             var form = document.getElementById('address-form');
-            
+
             // Adds event listener to the submit button
-            if (form.attachEvent)
-                {
-                    form.attachEvent("submit", processForm);
-                }
-            else
-                {
-                    form.addEventListener("submit", processForm);
-                }
+            if (form.attachEvent) {
+                form.attachEvent("submit", processForm);
+            } else {
+                form.addEventListener("submit", processForm);
+            }
+
         </script>
     </div>
 
