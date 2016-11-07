@@ -19,9 +19,9 @@
              var root = 'https://www.google.com/maps/embed/v1/search?key=AIzaSyDko3US7QPjYurzRs1V7rtB344Fc9G25Ck&q=';
              function mapPrep(location, id, query)
              {
-                document.getElementById(id).src = 'https://www.google.com/maps/embed/v1/search?key=AIzaSyDko3US7QPjYurzRs1V7rtB344Fc9G25Ck&q=taco+bell+near+66045'
+                document.getElementById(id).src = root.concat(query, "+near+", location)
              }
-             mapPrep('66045', 'testMap', 'Taco Bell');
+             mapPrep('66045', 'testMap', 'Jimmy+Johns');
         </script>
    </body>
 </html>
