@@ -1,25 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>ElectionIQ</title>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-    
-    <!--  Normalize.css  -->
-    <link rel="stylesheet" href="css/Normalize.css">
+        <!--  Normalize.css  -->
+        <link rel="stylesheet" href="css/Normalize.css"/>
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-</head>
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
 
-<body>
-    <h1>Hello, World!</h1>
+        <!-- main.css -->
+        <link rel="stylesheet" href="css/main.css"/>
+    </head>
 
+    <body>
+        <div id="indexContainer">
+            <div class="inner">
+                <img src="res/LogoDraft.png" alt="ElectionIQ logo" id="logoMain" class="img-responsive" /><br/>
+            </div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Bootstrap javascript plugins -->
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-</body>
+            <div id="sep"></div>
 
+            <div class="inner right">
+                <p>
+                    ElectionIQ is your one-stop solution to gather all of your election day information. ElectionIQ takes into account your address, and presents up-to-date and location specific election day information.
+                </p><br/>
+                <a href="Register.html" class="btn btn-default">HOW TO REGISTER</a>
+                <a href="what-is-on-the-ballot.html" class="btn btn-default">WHAT'S ON THE BALLOT</a>
+                <a href="polling-place.html" class="btn btn-default">WHERE TO VOTE</a>
+                
+                <div id="social_media">
+                    <img src="res/T-icon.png" alt=""/>
+                    <img src="res/Y-icon.png" alt=""/>
+                    <img src="res/F-icon.png" alt=""/>
+                </div>
+            </div>
+
+            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+            <script>
+                //document vertical resizing to content
+                var w = window.innerWidth;
+                var h = window.innerHeight;
+                document.getElementById("indexContainer").style.height = h * .6 + 'px';
+            </script>
+    </body>
 </html>

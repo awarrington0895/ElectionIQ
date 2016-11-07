@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Home</title>
+
+        <!--  Normalize.css  -->
+        <link rel="stylesheet" href="css/Normalize.css">
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+        <!-- main.css -->
+        <link rel="stylesheet" href="css/main.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+    </head>
+
+    <body>
+
+        <script>
+            function RegOnline() {
+                $.ajax({
+                    url: 'http://ip-api.com/json',
+                    dataType: 'json',
+                    success: function (data) {
+                        $("#results").append('all good');
+                        window.location.href = "https://vote.gov/register/" + JSON.stringify(data.region).replace(/\"/g, "").toLowerCase() + "/";
+                    },
+                    error: function () {
+                        $("#results").append("error");
+                        alert('error');
+                    }
+                });
+            }
+        </script>
+
+        <div id="indexContainer">
+            <div class="inner">
+                <div>
+                    <img src="res/LogoDraft.png" alt="ElectionIQ logo" id="logoSidePage" class="img-responsive"><br/>
+                    <div class="text">
+                        ElectionIQ is your one-stop solution to gather all of your election day information. ElectionIQ takes into account your address, and presents up-to-date and location-specific Election information.
+                    </div>
+                    <img id="back" src="res/Back.png" onClick="goBack()" alt=""/>
+                </div>
+            </div>
+
+            <div id="sep"></div>
+
+            <div class="inner right">
+                <p>
+                    Registering to vote is simple! For your convenience, there are two options through which you can register to vote
+                </p><br/>
+                <div class="btn btn-default" onClick="RegOnline()">REGISTER ONLINE</div>
+                <div class="btn btn-default">REGISTER IN PERSON</div>
+
+            </div>
+
+            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+            <script>
+                //document vertical resizing to content
+                var w = window.innerWidth;
+                var h = window.innerHeight;
+                document.getElementById("indexContainer").style.height = h * .6 + 'px';
+            </script>
+        </div>
+
+    </body>
+
+</html>

@@ -1,0 +1,140 @@
+@font-face {
+    font-family: 'Avenir'; /*a name to be used later*/
+    src: url('../fonts/Avenir.ttc'); /*URL to font*/
+}
+
+body
+{
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-image: url(../res/background.jpg);
+    width: 80%;
+}
+
+#indexContainer{
+    position:absolute; /*it can be fixed too*/
+    left:0; right:0;
+    top:0; bottom:0;
+    margin:auto;
+    width: 85%;
+    display: flex;
+    justify-content: center;
+}
+
+#logoSidePage
+{
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.inner
+{
+    font-weight:bold;
+    align-self: center;
+    text-align: center;
+    color: white;
+    font-family: "Arial";
+    font-size: 1.5em;
+    width: 49.5%;
+    max-height: 100%;
+    float: left;
+    padding:0 4em;
+    vertical-align: middle;
+    overflow: scroll;
+    overflow: auto;
+}
+
+.right{
+    text-align: center;
+}
+#register-desc
+{
+    margin-bottom: 3vw;
+}
+
+#canvas 
+{
+    padding-right: 2em;
+    padding-left:  2em;
+}
+
+.right> p{
+    font-size: 1.35vw;
+}
+
+#sep{
+    border-right: 1px solid rgba(255,255,255,0.2);
+}
+
+.btn
+{
+    font-family: "Arial";
+    font-size: 1.2vw;
+    letter-spacing:2px;
+    text-transform: full-width;
+    font-weight:400;
+    display: block;
+    background-color: #68AA48;
+    color: white;
+    border-radius: 0.75em;
+    width: 80%;
+    margin: 0.5em auto;
+    padding: 0.3em;
+}
+#right{
+    text-align: left;
+}
+
+h3{
+    color: rgb(100,216,120);
+    text-decoration: underline;
+    text-align: left;
+}
+
+#street-address-container
+{
+    width: 100%;
+
+
+}
+
+#street-address
+{
+    border-radius: 1em;
+    width: 100%;
+}
+
+#find 
+{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+}
+
+#address-row
+{
+    margin-bottom: 1em;
+}
+
+#social_media>img{
+    width: 2.5em;
+    height: 2.4em;
+}
+
+#map 
+{
+    width: 100%;
+    height: 20vw;
+}
+#back{
+    float: left;
+    width: 2.5em;
+}
+#testMap
+{ 
+    width: 100%;
+    height: 100%;
+}

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+
+    <!--  Normalize.css  -->
+    <link rel="stylesheet" href="css/Normalize.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+    <!-- main.css -->
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+            <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+</head>
+
+<body>
+    <body>
+
+        <script>
+            var url = "http://ip-api.com/json";
+
+            function httpGet(url) {
+                if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp = new XMLHttpRequest();
+                } else { // code for IE6, IE5
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange = function () {
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        return xmlhttp.responseText;
+                    }
+                }
+                xmlhttp.open("GET", theUrl, false);
+                xmlhttp.send();
+            }
+
+            alert(httpGet("http://ip-api.com/json"));
+
+        </script>
+        <div id="indexContainer">
+            <div class="inner">
+                <div>
+                    <img src="res/LogoDraft.png" alt="ElectionIQ logo" id="logoSidePage" class="img-responsive">
+                    <br/>
+                    <div class="text">
+                        ElectionIQ is your one-stop solution to gather all of your election day information. ElectionIQ takes into account your address, and presents up-to-date and location-specific Election information.
+                    </div>
+                    <img id="back" src="res/Back.png" onClick="goBack()" alt=""/>
+                </div>
+
+            </div>
+
+            <div id="sep"></div>
+
+            <div class="inner right">
+                <p>
+                    WHERE IS MY POLLING PLACE?
+                </p>
+                <br/>
+
+                <div class="map-container">
+                    <div id="address-line">
+                        <div class="row" id=address-row>
+                            <form class="form-inline" id="address-form">
+                                <div class="col-md-8">
+                                    <div class="form-group" id="street-address-container">
+
+                                        <input type="text" class="form-control" id="street-address" placeholder="Street Address">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <button type="submit" class="btn btn-default" id="find">FIND</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12" id="map">
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script>
+            //document vertical resizing to content
+            var w = window.innerWidth;
+            var h = window.innerHeight;
+            document.getElementById("indexContainer").style.height = h * .6 + 'px';
+
+        </script>
+
+        <script>
+            function VoterData(address, key) { //voter data class
+                this.address = address.replace(" ", "+");
+                this.key = key;
+                this.xmlData = new XMLHttpRequest();
+                this.parser = new DOMParser();
+            }
+
+            VoterData.prototype.getData = function() {
+                this.xmlData.open("GET", "https://www.googleapis.com/civicinfo/v2/voterinfo?address=" + this.address + "&key=" + this.key, false);
+                this.xmlData.send(null);
+            };
+
+            VoterData.prototype.print = function() {
+                console.log(this.xmlData.responseText);
+            };
+
+            VoterData.prototype.getJSON = function() {
+                return JSON.parse(this.xmlData.responseText);
+            };
+
+//            var dat = new VoterData("1734 Engel Rd Lawrence KS", "AIzaSyAHNL-KlQfG8iva2YZITyxCQT4oEQbGr4Q"); //replace spaces with '+' for address
+//            dat.getData();
+//            dat.print();
+//            var j = dat.getJSON()
+//            console.log(j);
+//            document.getElementById("Poll_Name").innerHTML = j['pollingLocations'][0]['address']['locationName'];
+//            document.getElementById("Poll_Location").innerHTML = j['pollingLocations'][0]['address']['line1'] + " " + j['pollingLocations'][0]['address']['city'] + ", " + j['pollingLocations'][0]['address']['state'];
+
+            // 
+            function processForm(e) {
+                //Prevents submit button from refreshing page
+                if (e.preventDefault) e.preventDefault();
+
+                //                document.getElementById('map').innerHTML = "<img src='res/map.png' id='map-pic'>";
+                
+                // Grabs user input from form
+                var address = document.getElementById('street-address').value;
+                address = address.replace(/ /g, "+");
+                
+                
+                console.log(address);
+
+                var dat = new VoterData(address, "AIzaSyAHNL-KlQfG8iva2YZITyxCQT4oEQbGr4Q"); //replace spaces with '+' for address
+                dat.getData();
+//                dat.print();
+                var j = dat.getJSON()
+//                console.log(j);
+//                document.getElementById("Poll_Name").innerHTML = j['pollingLocations'][0]['address']['locationName'];
+//                document.getElementById("Poll_Location").innerHTML = j['pollingLocations'][0]['address']['line1'] + " " + j['pollingLocations'][0]['address']['city'] + ", " + j['pollingLocations'][0]['address']['state'];
+                
+                var mapStreetAddress = j['pollingLocations'][0]['address']['line1'];
+                mapStreetAddress = mapStreetAddress.replace(/ /g, "+");
+//                + "+" + j['pollingLocations'][0]['address']['city'] + "+" + j['pollingLocations'][0]['address']['state'];
+                var mapAddress = mapStreetAddress + "+" + j['pollingLocations'][0]['address']['city'] + "+" + j['pollingLocations'][0]['address']['state'];
+                console.log(mapAddress);
+
+                document.getElementById('map').innerHTML =
+                    `
+                  <iframe id="testMap"
+                   style="border:0"
+                   src="https://www.google.com/maps/embed/v1/search?key=AIzaSyDko3US7QPjYurzRs1V7rtB344Fc9G25Ck&q=` + mapAddress + '"' + `allowfullscreen>
+                  </iframe>
+                `
+
+                return false;
+            }
+
+            var form = document.getElementById('address-form');
+
+            // Adds event listener to the submit button
+            if (form.attachEvent) {
+                form.attachEvent("submit", processForm);
+            } else {
+                form.addEventListener("submit", processForm);
+            }
+
+        </script>
+    </div>
+
+</body>
+
+</html>
