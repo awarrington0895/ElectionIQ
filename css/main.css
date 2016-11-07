@@ -92,3 +92,46 @@ h3{
     text-decoration: underline;
     text-align: left;
 }
+
+#street-address-container
+{
+    width: 100%;
+
+
+}
+
+#street-address
+{
+    border-radius: 1em;
+    width: 100%;
+}
+
+#find 
+{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+}
+
+#address-row
+{
+    margin-bottom: 1em;
+}
+
+#map 
+{
+    width: 100%;
+    height: 20vw;
+}
+#back{
+    float: left;
+    width: 2.5em;
+}
+#testMap
+{
+
+    
+    width: 100%;
+    height: 100%;
+}

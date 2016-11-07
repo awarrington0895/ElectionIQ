@@ -14,17 +14,23 @@
         <!-- main.css -->
         <link rel="stylesheet" href="css/main.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <!--<script src="js/Civil_API.js" type="text/javascript"></script>-->
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
     </head>
 
     <body>
         <div id="indexContainer">
             <div class="inner">
                 <div>
-                    <img src="res/LogoDraft.png" alt="ElectionIQ logo" id="logoSidePage" class="img-responsive"></br>
+                    <img src="res/LogoDraft.png" alt="ElectionIQ logo" id="logoSidePage" class="img-responsive"><br/>
                     <div class="text">
                         ElectionIQ is your one-stop solution to gather all of your election day information. ElectionIQ takes into account your address, and presents up-to-date and location-specific Election information.
                     </div>
+                    <img id="back" src="res/Back.png" onClick="goBack()" alt=""/>
+
                 </div>
 
             </div>
@@ -52,13 +58,12 @@
                     success: function (data) {
                         $("#results").append('all good');
                         data.contests.forEach(function (entry) {
-                            if(JSON.stringify(data.type) !='\"Referendum\"'){
-                            document.getElementById("right").innerHTML += "<h3>" + JSON.stringify(entry.office).replace(/\"/g, "") + "<h3>";
-                            entry.candidates.forEach(function (entry2) {
-                                document.getElementById("right").innerHTML += "<h4> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" + JSON.stringify(entry2.name).replace(/\"/g, "") + "<h4>";
-                            })
-                            }
-                            else{
+                            if (JSON.stringify(data.type) != '\"Referendum\"') {
+                                document.getElementById("right").innerHTML += "<h3>" + JSON.stringify(entry.office).replace(/\"/g, "") + "<h3>";
+                                entry.candidates.forEach(function (entry2) {
+                                    document.getElementById("right").innerHTML += "<h4> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" + JSON.stringify(entry2.name).replace(/\"/g, "") + "<h4>";
+                                })
+                            } else {
                                 document.getElementById("right").innerHTML += "oops";
                             }
                         })
