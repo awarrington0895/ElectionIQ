@@ -14,27 +14,10 @@
         <!-- main.css -->
         <link rel="stylesheet" href="css/main.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="js/Civil_API.js" type="text/javascript"></script>
     </head>
 
     <body>
-
-        <script>
-            function RegOnline() {
-                $.ajax({
-                    url: 'http://ip-api.com/json',
-                    dataType: 'json',
-                    success: function (data) {
-                        $("#results").append('all good');
-                        window.location.href = "https://vote.gov/register/" + JSON.stringify(data.region).replace(/\"/g, "").toLowerCase() + "/";
-                    },
-                    error: function () {
-                        $("#results").append("error");
-                        alert('error');
-                    }
-                });
-            }
-        </script>
-
         <div id="indexContainer">
             <div class="inner">
                 <div>
@@ -49,12 +32,9 @@
             <div id="sep"></div>
 
             <div class="inner right">
-                <p>
-                    Registering to vote is simple! For your convenience, there are two options through which you can register to vote
-                </p><br/>
-                <div class="btn btn-default" onClick="RegOnline()">REGISTER ONLINE</div>
-                <div class="btn btn-default">REGISTER IN PERSON</div>
-
+                <script>
+                    
+                </script>
             </div>
 
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
