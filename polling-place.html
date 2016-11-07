@@ -96,18 +96,67 @@
         </script>
 
         <script>
+            function VoterData(address, key) { //voter data class
+                this.address = address.replace(" ", "+");
+                this.key = key;
+                this.xmlData = new XMLHttpRequest();
+                this.parser = new DOMParser();
+            }
+
+            VoterData.prototype.getData = function() {
+                this.xmlData.open("GET", "https://www.googleapis.com/civicinfo/v2/voterinfo?address=" + this.address + "&key=" + this.key, false);
+                this.xmlData.send(null);
+            };
+
+            VoterData.prototype.print = function() {
+                console.log(this.xmlData.responseText);
+            };
+
+            VoterData.prototype.getJSON = function() {
+                return JSON.parse(this.xmlData.responseText);
+            };
+
+//            var dat = new VoterData("1734 Engel Rd Lawrence KS", "AIzaSyAHNL-KlQfG8iva2YZITyxCQT4oEQbGr4Q"); //replace spaces with '+' for address
+//            dat.getData();
+//            dat.print();
+//            var j = dat.getJSON()
+//            console.log(j);
+//            document.getElementById("Poll_Name").innerHTML = j['pollingLocations'][0]['address']['locationName'];
+//            document.getElementById("Poll_Location").innerHTML = j['pollingLocations'][0]['address']['line1'] + " " + j['pollingLocations'][0]['address']['city'] + ", " + j['pollingLocations'][0]['address']['state'];
+
             // 
             function processForm(e) {
                 //Prevents submit button from refreshing page
                 if (e.preventDefault) e.preventDefault();
 
                 //                document.getElementById('map').innerHTML = "<img src='res/map.png' id='map-pic'>";
+                
+                // Grabs user input from form
+                var address = document.getElementById('street-address').value;
+                address = address.replace(/ /g, "+");
+                
+                
+                console.log(address);
 
-                document.getElementById('map').innerHTML = 
-                `
+                var dat = new VoterData(address, "AIzaSyAHNL-KlQfG8iva2YZITyxCQT4oEQbGr4Q"); //replace spaces with '+' for address
+                dat.getData();
+//                dat.print();
+                var j = dat.getJSON()
+//                console.log(j);
+//                document.getElementById("Poll_Name").innerHTML = j['pollingLocations'][0]['address']['locationName'];
+//                document.getElementById("Poll_Location").innerHTML = j['pollingLocations'][0]['address']['line1'] + " " + j['pollingLocations'][0]['address']['city'] + ", " + j['pollingLocations'][0]['address']['state'];
+                
+                var mapStreetAddress = j['pollingLocations'][0]['address']['line1'];
+                mapStreetAddress = mapStreetAddress.replace(/ /g, "+");
+//                + "+" + j['pollingLocations'][0]['address']['city'] + "+" + j['pollingLocations'][0]['address']['state'];
+                var mapAddress = mapStreetAddress + "+" + j['pollingLocations'][0]['address']['city'] + "+" + j['pollingLocations'][0]['address']['state'];
+                console.log(mapAddress);
+
+                document.getElementById('map').innerHTML =
+                    `
                   <iframe id="testMap"
                    style="border:0"
-                   src="https://www.google.com/maps/embed/v1/search?key=AIzaSyDko3US7QPjYurzRs1V7rtB344Fc9G25Ck&q=2104+W+15th+St" allowfullscreen>
+                   src="https://www.google.com/maps/embed/v1/search?key=AIzaSyDko3US7QPjYurzRs1V7rtB344Fc9G25Ck&q=` + mapAddress + '"' + `allowfullscreen>
                   </iframe>
                 `
 
