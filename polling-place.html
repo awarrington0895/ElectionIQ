@@ -77,7 +77,7 @@
                 </div>
                 
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12" id="map">
                         <p>Embedded map goes here!</p>
                     </div>
                 </div>
@@ -102,7 +102,7 @@
                 //Prevents submit button from refreshing page
                 if (e.preventDefault) e.preventDefault();
                 
-                
+                document.getElementById('map').innerHTML = "<img src='res/map.png' id='map-pic'>";
                 
                 return false;
             }
